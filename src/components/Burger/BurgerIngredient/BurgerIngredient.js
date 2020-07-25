@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import classes from "./BurgerIngredient.css";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 class BurguerIngredient extends Component {
   parseIngredient = (props) => {
@@ -24,7 +24,7 @@ class BurguerIngredient extends Component {
       case "cheese":
         ingredient = <div className={classes.Cheese}></div>;
         break;
-      case "salat":
+      case "salad":
         ingredient = <div className={classes.Salad}></div>;
         break;
       case "bacon":
@@ -42,7 +42,7 @@ class BurguerIngredient extends Component {
   }
 }
 
-BurguerIngredient.PropTypes = {
-    type: PropTypes.string.isRequired
+BurguerIngredient.propTypes = {
+    type: propTypes.string.isRequired
 }
 export default BurguerIngredient;
