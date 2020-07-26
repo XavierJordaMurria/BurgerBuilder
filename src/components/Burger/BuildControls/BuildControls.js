@@ -13,7 +13,9 @@ const BuildControls = (props) => {
   // slr
   return (
     <div className={classes.BuildControls}>
-        <p>Current price: <strong>{props.price.toFixed(2)}€</strong></p>
+      <p>
+        Current price: <strong>{props.price.toFixed(2)}€</strong>
+      </p>
       {controls.map((c) => (
         <BuildControl
           key={c.label}
@@ -23,7 +25,13 @@ const BuildControls = (props) => {
           disabled={props.disabled[c.type]}
         ></BuildControl>
       ))}
-      <button className={classes.OrderButton} disabled={!props.purchasable}>Order Now!</button>
+      <button
+        className={classes.OrderButton}
+        disabled={!props.purchasable}
+        onClick={props.onOrderClicked}
+      >
+        Order Now!
+      </button>
     </div>
   );
 };
