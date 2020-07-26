@@ -26,11 +26,11 @@ class BurguerBuilder extends Component {
   };
 
   updatePurchaseState = (ingredients) => {
-    let sum =  Object.keys(ingredients)
-        .map((key) => ingredients[key])
-        .reduce((sum, el) => sum + el, 0);
+    let sum = Object.keys(ingredients)
+      .map((key) => ingredients[key])
+      .reduce((sum, el) => sum + el, 0);
 
-    console.log(`Purchasable: ${sum>0}`);
+    console.log(`Purchasable: ${sum > 0}`);
     this.setState({ purchasable: sum > 0 });
   };
   addIngredientHandler = (type) => {
@@ -83,8 +83,12 @@ class BurguerBuilder extends Component {
   };
 
   purchaseCancelHandler = () => {
-    this.setState({purchasing: false})
-  }
+    this.setState({ purchasing: false });
+  };
+
+  purchaseContinueHandler = () => { 
+    alert('You continued!!');
+  };
 
   render() {
     const disabledButtonArr = {
@@ -97,8 +101,16 @@ class BurguerBuilder extends Component {
 
     return (
       <Aux>
-        <Modal show={this.state.purchasing} modelClosed={this.purchaseCancelHandler}>
-          <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
+        <Modal
+          show={this.state.purchasing}
+          modelClosed={this.purchaseCancelHandler}
+        >
+          <OrderSummary
+            ingredients={this.state.ingredients}
+            cancelOrder={this.purchaseCancelHandler}
+            continueOrder={this.purchaseContinueHandler}
+            price={this.state.totalPrice}
+          ></OrderSummary>
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
