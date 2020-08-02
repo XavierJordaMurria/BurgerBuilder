@@ -5,7 +5,7 @@ const BackDrop = (props) => {
   return props.show ? (
     <div
       className={classes.BackDrop}
-      onClick={props.onClick}
+      onClick={props.clicked}
     ></div>
   ) : null;
 };
