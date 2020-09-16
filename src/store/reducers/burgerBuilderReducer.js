@@ -38,6 +38,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ingredients: action.ingredients,
+                totalPrice: 4, 
                 error: false
             };
 
@@ -47,7 +48,7 @@ const reducer = (state = initialState, action) => {
                 error: true
             };
         default:
-            console.log(`Unrecognized action type: ${action.type}`);
+            console.log(`[BurgerBuilderReducer] Unrecognized action type: ${action.type}`);
             return state;
     }
 };
