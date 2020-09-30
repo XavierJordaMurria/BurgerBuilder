@@ -32,7 +32,6 @@ const removeIngredient = (state, action) => {
     return operateIngredient(state, action, (a, b)=> a - b);
 }
 
-
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionsTypes.ADD_INGREDIENT: return addIngredient(state, action);
