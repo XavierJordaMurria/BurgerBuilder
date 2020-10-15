@@ -5,7 +5,8 @@ const initialState = {
     token: null,
     userID: null,
     error: null,
-    loading: false
+    loading: false,
+    authRedirectPath: "/"
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,6 +19,8 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, { error: action.error, loading: false });
         case actionsTypes.AUTH_LOGOUT:
             return updateObject(state, { token: null, userID: null, error: null, loading: false });
+        case actionsTypes.AUTH_SET_REDIRECT_PATH:
+            return updateObject(state, { authRedirectPath: action.path });
         default:
             console.log(`[AuthReducer] Unrecognized action type: ${action.type}`);
             return state;

@@ -4,7 +4,8 @@ import { updateObject } from '../utility';
 const initialState = {
     ingredients: null,
     totalPrice: 4,
-    error: false
+    error: false,
+    building: true
 };
 
 const INGREDIENTS_PRICES = {
@@ -19,7 +20,8 @@ const operateIngredient = (state, action, fn) => {
     const updatedIngredients = updateObject(state.ingredients, updatedIngredient);
     const newState = {
         ingredients: updatedIngredients,
-        totalPrice: fn(state.totalPrice, INGREDIENTS_PRICES[action.ingredientName])
+        totalPrice: fn(state.totalPrice, INGREDIENTS_PRICES[action.ingredientName]),
+        building: true
     };
     return updateObject(state, newState);
 }
@@ -41,7 +43,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 ingredients: action.ingredients,
                 totalPrice: 4,
-                error: false
+                error: false,
+                building: false
             };
 
         case actionsTypes.FETCHED_INGREDIENTS_FAILED:
