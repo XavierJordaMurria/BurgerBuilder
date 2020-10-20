@@ -1,6 +1,5 @@
 import * as actionsTypes from '../actions/actionsTypes';
 
-
 const initialState = {
     orders: [],
     loading: false,
