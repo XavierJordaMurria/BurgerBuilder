@@ -56,7 +56,6 @@ const reducer = (state = initialState, action) => {
                 loading: false
             }
         default:
-            console.log(`[Orders] Unrecognized action type: ${action.type}`);
             return state;
     }
 };

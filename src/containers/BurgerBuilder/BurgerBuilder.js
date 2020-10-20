@@ -19,8 +19,6 @@ class BurguerBuilder extends Component {
     let sum = Object.keys(ingredients)
       .map((key) => ingredients[key])
       .reduce((sum, el) => sum + el, 0);
-
-    console.log(`Purchasable: ${sum > 0}`);
     return sum > 0;
   };
 

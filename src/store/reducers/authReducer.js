@@ -22,7 +22,6 @@ const reducer = (state = initialState, action) => {
         case actionsTypes.AUTH_SET_REDIRECT_PATH:
             return updateObject(state, { authRedirectPath: action.path });
         default:
-            console.log(`[AuthReducer] Unrecognized action type: ${action.type}`);
             return state;
     }
 };

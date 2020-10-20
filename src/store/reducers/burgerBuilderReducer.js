@@ -53,7 +53,6 @@ const reducer = (state = initialState, action) => {
                 error: true
             };
         default:
-            console.log(`[BurgerBuilderReducer] Unrecognized action type: ${action.type}`);
             return state;
     }
 };
